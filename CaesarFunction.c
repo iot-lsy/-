@@ -2,57 +2,52 @@
 
 /*
 
-201721188 ½º¸¶Æ®Á¤º¸Åë½Å°øÇÐ°ú ÀÌ¼Ò¿ë
-
-Á¦ÃâÀÏ : 2018. 3. 24
-
  
+1. mainí•¨ìˆ˜ì—ì„œ 2ë‹¨ê³„ì—ì„œ ì‚¬ìš©í•  í‚¤ë°°ì—´(keys)ì„ ì „ë¶€ 27ë¡œ ì´ˆê¸°í™” ì‹œí‚¨ë‹¤. 
 
-1. mainÇÔ¼ö¿¡¼­ 2´Ü°è¿¡¼­ »ç¿ëÇÒ Å°¹è¿­(keys)À» ÀüºÎ 27·Î ÃÊ±âÈ­ ½ÃÅ²´Ù. 
-
-±× ÀÌÀ¯´Â ÇÔ¼ö¿¡´Â Å°¿Í ¿ø¹®¸¸ µé¾î°¡¾ßÇÏ±â ¶§¹®ÀÌ°í, Å° ¹üÀ§ ¹ÛÀÎ 27ÀÌ ³ª¿À¸é ±× ÀüÀÇ ÀÎµ¦½º°¡ Å° °ªÀÇ ±æÀÌÀÌ±â ¶§¹®ÀÌ´Ù.
+ê·¸ ì´ìœ ëŠ” í•¨ìˆ˜ì—ëŠ” í‚¤ì™€ ì›ë¬¸ë§Œ ë“¤ì–´ê°€ì•¼í•˜ê¸° ë•Œë¬¸ì´ê³ , í‚¤ ë²”ìœ„ ë°–ì¸ 27ì´ ë‚˜ì˜¤ë©´ ê·¸ ì „ì˜ ì¸ë±ìŠ¤ê°€ í‚¤ ê°’ì˜ ê¸¸ì´ì´ê¸° ë•Œë¬¸ì´ë‹¤.
 
  
 
  
 
-2. ke1ÇÔ¼ö¿¡¼­ check¹è¿­À» ÀÌ¿ëÇÏ¿© ¼Ò¹®ÀÚ ´ë¹®ÀÚ È­ÀÌÆ®½ºÆäÀÌ½º¸¦ ±¸º°ÇÑ´Ù.
+2. ke1í•¨ìˆ˜ì—ì„œ checkë°°ì—´ì„ ì´ìš©í•˜ì—¬ ì†Œë¬¸ìž ëŒ€ë¬¸ìž í™”ì´íŠ¸ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ êµ¬ë³„í•œë‹¤.
 
-Ã¹¹øÂ° for¹®¿¡¼­´Â °¢ ¹®ÀÚ¸¦ ±¸º°ÇÏ´Âµ¥ ¹è¿­ÀÌ 0À¸·Î ÃÊ±âÈ­ µÇ¾îÀÖÀ¸¹Ç·Î ´ë¹®ÀÚ¿Í È­ÀÌÆ® ½ºÆäÀÌ½ºÀÏ °æ¿ì¸¸ »ý°¢ÇÏ¸é µÈ´Ù.
+ì²«ë²ˆì§¸ forë¬¸ì—ì„œëŠ” ê° ë¬¸ìžë¥¼ êµ¬ë³„í•˜ëŠ”ë° ë°°ì—´ì´ 0ìœ¼ë¡œ ì´ˆê¸°í™” ë˜ì–´ìžˆìœ¼ë¯€ë¡œ ëŒ€ë¬¸ìžì™€ í™”ì´íŠ¸ ìŠ¤íŽ˜ì´ìŠ¤ì¼ ê²½ìš°ë§Œ ìƒê°í•˜ë©´ ëœë‹¤.
 
-µÎ¹øÂ° for¹®¿¡¼­´Â ¸ÕÀú check¹è¿­À» ¹ÙÅÁÀ¸·Î start¿Í end º¯¼ö¿¡ ´ë¹®ÀÚ ¼Ò¹®ÀÚ¸¦ ±¸º°ÇÏ¿© A¿Í ZÀÇ ¾Æ½ºÅ° ÄÚµå°ªÀ» ³Ö¾îÁØ´Ù.
+ë‘ë²ˆì§¸ forë¬¸ì—ì„œëŠ” ë¨¼ì € checkë°°ì—´ì„ ë°”íƒ•ìœ¼ë¡œ startì™€ end ë³€ìˆ˜ì— ëŒ€ë¬¸ìž ì†Œë¬¸ìžë¥¼ êµ¬ë³„í•˜ì—¬ Aì™€ Zì˜ ì•„ìŠ¤í‚¤ ì½”ë“œê°’ì„ ë„£ì–´ì¤€ë‹¤.
 
-±× ÈÄ change¶ó´Â º¯¼ö¸¦ ÀÌ¿ëÇÏ¿© ¿ø¹®À» Å° °ª¸¸Å­ ÀÌµ¿½ÃÅ²´Ù. ÀÌ ¶§ ´ÙÀ½ if¹®À» ÀÌ¿ëÇÏ¿© ¸¸¾à change°¡ endÀÎ Z¸¦ ³Ñ¾î°¡¸é ´Ù½Ã AºÎÅÍ ½ÃÀÛÇØ¾ß ÇÏ¹Ç·Î
+ê·¸ í›„ changeë¼ëŠ” ë³€ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ ì›ë¬¸ì„ í‚¤ ê°’ë§Œí¼ ì´ë™ì‹œí‚¨ë‹¤. ì´ ë•Œ ë‹¤ìŒ ifë¬¸ì„ ì´ìš©í•˜ì—¬ ë§Œì•½ changeê°€ endì¸ Zë¥¼ ë„˜ì–´ê°€ë©´ ë‹¤ì‹œ Aë¶€í„° ì‹œìž‘í•´ì•¼ í•˜ë¯€ë¡œ
 
-change = change-end+start-1 ÀÇ ¼ö½ÄÀ» »ç¿ëÇÏ¿© AºÎÅÍ ½ÃÀÛµÇµµ·Ï ÇÑ´Ù.±× ÈÄ ¾Æ½ºÅ° ÄÚµå¸¦ charÇüÀ¸·Î °­Á¦Çüº¯È¯½ÃÄÑ ¿ø¹® º¯¼ö¿¡ Áý¾î³Ö´Â´Ù.
-
- 
-
-¸¸¾à switch¿¡¼­ ´ë¹®ÀÚ¿Í ¼Ò¹®ÀÚ ÀÌ¿ÜÀÇ ¹®ÀÚÀÏ°æ¿ì´Â continue¸¦ ÀÌ¿ëÇÏ¿© º¯È¯½ÃÅ°Áö ¾Ê°í ´ÙÀ½ ¹®ÀÚ·Î ³Ñ¾î°£´Ù.
+change = change-end+start-1 ì˜ ìˆ˜ì‹ì„ ì‚¬ìš©í•˜ì—¬ Aë¶€í„° ì‹œìž‘ë˜ë„ë¡ í•œë‹¤.ê·¸ í›„ ì•„ìŠ¤í‚¤ ì½”ë“œë¥¼ charí˜•ìœ¼ë¡œ ê°•ì œí˜•ë³€í™˜ì‹œì¼œ ì›ë¬¸ ë³€ìˆ˜ì— ì§‘ì–´ë„£ëŠ”ë‹¤.
 
  
 
- 
-
-3. ke2ÇÔ¼ö¿¡¼­´Â lenÀÌ¶ó´Â Å°°ªÀÇ ±æÀÌ¸¦ ÀúÀåÇÏ´Â º¯¼ö¿Í count¶ó´Â Å° °ªÀÇ ÀÎµ¦½º¿Í ¿ø¹®ÀÇ ÀÎµ¦½º¸¦ ±¸º°ÇÒ º¯¼ö¸¦ Ãß°¡·Î ¼±¾ðÇÑ´Ù.
-
-Ã¹¹øÂ° for¹®À» ÀÌ¿ëÇÏ¿© main¿¡¼­ 27·Î ÃÊ±âÈ­ ½ÃÅ² keysº¯¼öÀÇ Å° °ª ±æÀÌ¸¦ ¾Ë¾Æ³½´Ù. 
-
-27Àº Å° ¹üÀ§ ¹ÛÀÇ °ª ÀÌ¹Ç·Î keys[i]°¡ 27ÀÌ ³ª¿Ã¶§±îÁö for¹®À» µ¹¸®¸é 27ÀÌ ³ª¿À±â ÇÏ³ª Àü ÀÎµ¦½º°ªÀÌ keyÀÇ ±æÀÌÀÌ´Ù.
-
-µÎ¹øÂ° for¹®Àº ke1°ú ¸¶Âù°¡Áö·Î ´ë¹®ÀÚ ¼Ò¹®ÀÚ¸¦ ±¸º°ÇÑ ÈÄ Å° °ª ¸¸Å­ º¯È¯À» ½ÃÄÑÁØ´Ù. 
-
-ÇÏÁö¸¸ ÀÌ ¶§ Å° °ªÀÇ ±æÀÌ¿Í ¿ø¹®ÀÇ ±æÀÌ°¡ ´Ù¸¦ ¼ö ÀÖ±â ¶§¹®¿¡ Å° °ªÀÌ ¿Ã¹Ù¸£°Ô ¼øÈ¯ÇÒ ¼ö ÀÖµµ·Ï count¶ó´Â º¯¼ö¸¦ »ç¿ëÇÑ´Ù. 
-
-countº¯¼ö´Â i°¡ 1ÀÌ Áõ°¡ÇÒ¶§¸¶´Ù °°ÀÌ 1¾¿ Áõ°¡ÇÑ´Ù.
-
-Ã³À½ if¹®Àº Å°°ªÀÇ ±æÀÌÀÎ len°ú countÀÇ °³¼ö°¡ °°¾ÆÁ³À» °æ¿ì ´Ù½Ã Ã³À½ ÀÎµ¦½ºÀÎ 0À¸·Î ÃÊ±âÈ­ ½ÃÄÑÁØ´Ù.
-
-±× ÈÄ ¿ø¹®À» Å° °ªÀ¸·Î º¯È¯½ÃÅ² ÈÄ count++¸¦ ÇÏ¿© 1¸¸Å­ Áõ°¡½ÃÅ²´Ù.
+ë§Œì•½ switchì—ì„œ ëŒ€ë¬¸ìžì™€ ì†Œë¬¸ìž ì´ì™¸ì˜ ë¬¸ìžì¼ê²½ìš°ëŠ” continueë¥¼ ì´ìš©í•˜ì—¬ ë³€í™˜ì‹œí‚¤ì§€ ì•Šê³  ë‹¤ìŒ ë¬¸ìžë¡œ ë„˜ì–´ê°„ë‹¤.
 
  
 
-¸¸¾à ÀÎµ¦½º °ªÀÌ 2ÀÎ ¿ø¹®ÀÌ ´ë¹®ÀÚ ¼Ò¹®ÀÚ°¡ ¾Æ´Ò °æ¿ì´Â count¸¦ Áõ°¡½ÃÅ°¸é ¾ÈµÇ±â ¶§¹®¿¡ count++¸¦ continueº¸´Ù µÚÂÊ¿¡ ÀÛ¼ºÇÏ¿´´Ù.
+ 
+
+3. ke2í•¨ìˆ˜ì—ì„œëŠ” lenì´ë¼ëŠ” í‚¤ê°’ì˜ ê¸¸ì´ë¥¼ ì €ìž¥í•˜ëŠ” ë³€ìˆ˜ì™€ countë¼ëŠ” í‚¤ ê°’ì˜ ì¸ë±ìŠ¤ì™€ ì›ë¬¸ì˜ ì¸ë±ìŠ¤ë¥¼ êµ¬ë³„í•  ë³€ìˆ˜ë¥¼ ì¶”ê°€ë¡œ ì„ ì–¸í•œë‹¤.
+
+ì²«ë²ˆì§¸ forë¬¸ì„ ì´ìš©í•˜ì—¬ mainì—ì„œ 27ë¡œ ì´ˆê¸°í™” ì‹œí‚¨ keysë³€ìˆ˜ì˜ í‚¤ ê°’ ê¸¸ì´ë¥¼ ì•Œì•„ë‚¸ë‹¤. 
+
+27ì€ í‚¤ ë²”ìœ„ ë°–ì˜ ê°’ ì´ë¯€ë¡œ keys[i]ê°€ 27ì´ ë‚˜ì˜¬ë•Œê¹Œì§€ forë¬¸ì„ ëŒë¦¬ë©´ 27ì´ ë‚˜ì˜¤ê¸° í•˜ë‚˜ ì „ ì¸ë±ìŠ¤ê°’ì´ keyì˜ ê¸¸ì´ì´ë‹¤.
+
+ë‘ë²ˆì§¸ forë¬¸ì€ ke1ê³¼ ë§ˆì°¬ê°€ì§€ë¡œ ëŒ€ë¬¸ìž ì†Œë¬¸ìžë¥¼ êµ¬ë³„í•œ í›„ í‚¤ ê°’ ë§Œí¼ ë³€í™˜ì„ ì‹œì¼œì¤€ë‹¤. 
+
+í•˜ì§€ë§Œ ì´ ë•Œ í‚¤ ê°’ì˜ ê¸¸ì´ì™€ ì›ë¬¸ì˜ ê¸¸ì´ê°€ ë‹¤ë¥¼ ìˆ˜ ìžˆê¸° ë•Œë¬¸ì— í‚¤ ê°’ì´ ì˜¬ë°”ë¥´ê²Œ ìˆœí™˜í•  ìˆ˜ ìžˆë„ë¡ countë¼ëŠ” ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•œë‹¤. 
+
+countë³€ìˆ˜ëŠ” iê°€ 1ì´ ì¦ê°€í• ë•Œë§ˆë‹¤ ê°™ì´ 1ì”© ì¦ê°€í•œë‹¤.
+
+ì²˜ìŒ ifë¬¸ì€ í‚¤ê°’ì˜ ê¸¸ì´ì¸ lenê³¼ countì˜ ê°œìˆ˜ê°€ ê°™ì•„ì¡Œì„ ê²½ìš° ë‹¤ì‹œ ì²˜ìŒ ì¸ë±ìŠ¤ì¸ 0ìœ¼ë¡œ ì´ˆê¸°í™” ì‹œì¼œì¤€ë‹¤.
+
+ê·¸ í›„ ì›ë¬¸ì„ í‚¤ ê°’ìœ¼ë¡œ ë³€í™˜ì‹œí‚¨ í›„ count++ë¥¼ í•˜ì—¬ 1ë§Œí¼ ì¦ê°€ì‹œí‚¨ë‹¤.
+
+ 
+
+ë§Œì•½ ì¸ë±ìŠ¤ ê°’ì´ 2ì¸ ì›ë¬¸ì´ ëŒ€ë¬¸ìž ì†Œë¬¸ìžê°€ ì•„ë‹ ê²½ìš°ëŠ” countë¥¼ ì¦ê°€ì‹œí‚¤ë©´ ì•ˆë˜ê¸° ë•Œë¬¸ì— count++ë¥¼ continueë³´ë‹¤ ë’¤ìª½ì— ìž‘ì„±í•˜ì˜€ë‹¤.
 
  
 
@@ -64,7 +59,7 @@ countº¯¼ö´Â i°¡ 1ÀÌ Áõ°¡ÇÒ¶§¸¶´Ù °°ÀÌ 1¾¿ Áõ°¡ÇÑ´Ù.
 
 void ke1(char* origin, int key) {
 
-	int check[100] = { 0, }; //¼Ò¹®ÀÚ 0 ´ë¹®ÀÚ 1 È­ÀÌÆ®½ºÆäÀÌ½º 2
+	int check[100] = { 0, }; //ì†Œë¬¸ìž 0 ëŒ€ë¬¸ìž 1 í™”ì´íŠ¸ìŠ¤íŽ˜ì´ìŠ¤ 2
 	int change, end, start;
 
 	for (int i = 0; origin[i]; i++) {		
@@ -119,10 +114,10 @@ void ke1(char* origin, int key) {
 
 void ke2(char* origin, int* keys) {
 
-	int check[100] = { 0, }; //¼Ò¹®ÀÚ 0 ´ë¹®ÀÚ 1 È­ÀÌÆ®½ºÆäÀÌ½º 2
+	int check[100] = { 0, }; //ì†Œë¬¸ìž 0 ëŒ€ë¬¸ìž 1 í™”ì´íŠ¸ìŠ¤íŽ˜ì´ìŠ¤ 2
 	int change, end, start;
-	int len = 0; // key±æÀÌ
-	int count = 0; // Å°ÀÎµ¦½º ¿ø¹®ÀÎµ¦½º ±¸º°¿ë
+	int len = 0; // keyê¸¸ì´
+	int count = 0; // í‚¤ì¸ë±ìŠ¤ ì›ë¬¸ì¸ë±ìŠ¤ êµ¬ë³„ìš©
 
 	for (int i = 0; keys[i] != 27; i++)
 		len++;
@@ -190,21 +185,21 @@ int main() {
 	for (int i = 0; i < 100; i++)
 		keys[i] = 27;
 
-	printf("¿ø¹®ÀÔ·Â:");
+	printf("ì›ë¬¸ìž…ë ¥:");
 
 	do {
 
-		printf("½ÃÀú ¾ÏÈ£(1. 1´Ü°è 2. 2´Ü°è 0. Á¾·á)");
-		printf("ÀÔ·Â:");
+		printf("ì‹œì € ì•”í˜¸(1. 1ë‹¨ê³„ 2. 2ë‹¨ê³„ 0. ì¢…ë£Œ)");
+		printf("ìž…ë ¥:");
 		scanf("%d", &select);
 		getchar();
 
 		if (select == 1) {
 
-			printf("1´Ü°è\n");
-			printf("¿ø¹® ÀÔ·Â:");
+			printf("1ë‹¨ê³„\n");
+			printf("ì›ë¬¸ ìž…ë ¥:");
 			gets(origin);
-			printf("Å°°ªÀÔ·Â(0~25):");
+			printf("í‚¤ê°’ìž…ë ¥(0~25):");
 			scanf("%d", &key);
 			ke1(origin, key);
 
@@ -212,10 +207,10 @@ int main() {
 
 		else if (select == 2) {
 			
-			printf("2´Ü°è\n");
-			printf("¿ø¹® ÀÔ·Â:");
+			printf("2ë‹¨ê³„\n");
+			printf("ì›ë¬¸ ìž…ë ¥:");
 			gets(origin);
-			printf("¸î°³ÀÇÅ°¸¦ÀÔ·Â¹Þ°Ú½À´Ï±î");
+			printf("ëª‡ê°œì˜í‚¤ë¥¼ìž…ë ¥ë°›ê² ìŠµë‹ˆê¹Œ");
 			scanf("%d", &num);
 			
 			for (int i = 0; i < num; i++)
@@ -227,7 +222,7 @@ int main() {
 
 		else {
 
-			printf("Á¾·á\n");
+			printf("ì¢…ë£Œ\n");
 			break;
 
 		}
